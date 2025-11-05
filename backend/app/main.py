@@ -9,7 +9,7 @@ app = FastAPI(title="FastAPI + Neon (Minimal)")
 
 # --- CORS ---
 # Für Produktion FRONTEND_ORIGIN exakt setzen (z. B. https://ui-frontend.onrender.com)
-origins = [os.getenv("FRONTEND_ORIGIN", "http://localhost:8501","*")]
+origins = [os.getenv("FRONTEND_ORIGIN", "*")] # * universelle Freigabe !!! FIXME
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
