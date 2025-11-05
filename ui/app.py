@@ -1,8 +1,9 @@
 import os
 import requests
 import streamlit as st
-
-API_BASE = os.getenv("API_BASE", st.secrets.get("API_BASE", "http://localhost:8000"))
+# primär aus Env (Render/UI-Service), sonst Fallback lokal
+API_BASE = os.getenv("API_BASE") or "http://localhost:8000"
+#API_BASE=API_BASE = "https://my-render-test-project.onrender.com"
 
 st.set_page_config(page_title="Streamlit + FastAPI + Neon", layout="centered")
 st.title("Streamlit UI")
