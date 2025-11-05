@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: backend-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./start.sh
+    envVars:
+      - key: DATABASE_URL
+        sync: false    # Render erwartet, dass du den Wert im Dashboard einträgst
+      - key: FRONTEND_ORIGIN
+        value: https://deine-frontend-url.onrender.com
