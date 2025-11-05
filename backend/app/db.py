@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 # Erwartet z. B.:
 # postgresql+psycopg://USER:PASSWORD@HOST:5432/DBNAME?sslmode=require
-DATABASE_URL = os.getenv("DB_URL_PYTEST")
+DATABASE_URL = os.getenv("DB_URL_PYTEST") or os.getenv("DATABASE_URL")
 
 if not DATABASE_URL:
     raise RuntimeError("Env DATABASE_URL (Neon) fehlt.")
