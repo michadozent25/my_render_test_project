@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-psycopg[binary] # postgress
-SQLAlchemy>=2
-
-streamlit
-requests
